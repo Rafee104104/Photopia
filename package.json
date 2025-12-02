@@ -4,14 +4,17 @@
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview"
+		"build": "prisma migrate deploy && vite build",
+		"preview": "vite preview",
+		"postinstall": "prisma generate"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^3.3.1",
+		"@sveltejs/adapter-netlify": "*",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"autoprefixer": "^10.4.19",
+		"better-sqlite3": "^12.5.0",
+		"pg": "^8.16.3",
 		"postcss": "^8.4.38",
 		"svelte": "^4.2.7",
 		"tailwindcss": "^3.4.4",
